@@ -1,7 +1,7 @@
 module Api
   class MessagesController < ApplicationController
     def index
-      @message = Message.order("RANDOM()").first
+      @message = Message.order('RANDOM()').first
 
       if @message
         render json: { message: @message.content }, status: :ok
