@@ -7,3 +7,20 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Message.destroy_all
+
+greetings = [
+  { content: 'Hello!' },
+  { content: '¡Hola!' },
+  { content: 'Bonjour!' },
+  { content: 'Hallo!' },
+  { content: 'Ciao!' },
+  { content: 'こんにちは！' },
+  { content: '你好！' }
+  # Agrega más idiomas según tus necesidades
+]
+
+# Crear registros en la base de datos
+Message.create!(greetings)
+
+puts 'Seed data added successfully!'

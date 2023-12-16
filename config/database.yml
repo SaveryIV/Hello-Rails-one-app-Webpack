@@ -12,9 +12,9 @@ default: &default
 
 development:
   <<: *default
-  database: storage/development.postgresql
+  database: storage_development_postgresql
   username: postgres
-  password: new_password
+  password: pirongas
   host: localhost
   port: 5432
 
@@ -23,13 +23,13 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: storage/test.postgresql
+  database: storage_development_postgresql
   username: postgres
-  password: new_password
+  password: pirongas
   host: localhost
   port: 5432
 
 production:
   <<: *default
-  database: storage/production.postgresql
+  database: storage_development_postgresql
   username: postgres
