@@ -1,8 +1,13 @@
 module Api
   class MessagesController < ApplicationController
-    def random_greeting
-      greetings = %w[سلام Hi Hola こんにちは Ciao]
-      render json: { greeting: greetings.sample }
+    def index
+      @message = Message.order("RANDOM()").first
+
+      if @message
+        render json: { message: @message.content }, status: :ok
+      else
+        render json: { message: 'No Greeting found' }, status: :not_found
+      end
     end
   end
 end
