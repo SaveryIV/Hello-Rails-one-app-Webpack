@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setGreeting } from '../GreetingSlice';
+import { setGreeting } from '../greetingSlice';
 
 const Greeting = ({ greeting, setGreeting }) => {
   useEffect(() => {
